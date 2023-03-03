@@ -38,7 +38,25 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :mailtrap
+
+  config.action_mailer.mailtrap_settings = {
+    api_key: ENV.fetch('MAILTRAP_API_KEY')
+  }
+
+  config.action_mailer.smtp_settings = {
+    :address        => 'live.smtp.mailtrap.io',
+    :port           => '25',
+    :authentication => 'plain',
+    :user_name      => 'api',
+    :password       => 'b25b08bf1f52c73d3c356083db42de7d',
+    :enable_starttls_auto => true,
+  #  :STARTTLS       => 'Required'
+    :domain         => 'mixty.com'
+  }
+
 
   config.action_mailer.perform_caching = false
 

@@ -261,6 +261,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
+  mail
   mailtrap
   pg (~> 1.1)
   puma (~> 5.0)
