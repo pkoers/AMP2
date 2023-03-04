@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "json"
+gem "net-http"
+
 # Mailtrap gem to send out emails
 gem "mailtrap"
 gem "mail"
