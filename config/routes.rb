@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'webhook/receive'
   get 'welcome/index'
   devise_for :users
   root to: "pages#home"
@@ -6,4 +7,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  post '/webhook', to: 'webhook#receive'
 end
