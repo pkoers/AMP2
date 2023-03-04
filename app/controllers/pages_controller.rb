@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
     # command to send emails via mailtrap
     # TestMailer.test_email.deliver_now
-    slack
   end
 
   private
