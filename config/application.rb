@@ -4,6 +4,9 @@ require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+
+ENV['SLACK_WORKFLOW_URL'] = 'https://hooks.slack.com/workflows/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'
+
 Bundler.require(*Rails.groups)
 
 module AMP2

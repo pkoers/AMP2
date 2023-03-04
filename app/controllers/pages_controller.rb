@@ -4,13 +4,14 @@ class PagesController < ApplicationController
   def home
     # command to send emails via mailtrap
     # TestMailer.test_email.deliver_now
+    slack
   end
 
   private
 
   def slack
     # function to send a notification to Slack
-    url = 'https://hooks.slack.com/workflows/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'
+    url = ENV.fetch('SLACK_WORKFLOW_URL')
     payload = { Notification: 'A lot of noise from AMP' }
 
     uri = URI(url)
