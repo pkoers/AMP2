@@ -1,27 +1,18 @@
-# fly.toml file generated for amp2 on 2023-03-06T10:29:28+01:00
+# fly.toml file generated for amp2 on 2023-03-06T14:23:16+01:00
 
 app = "amp2"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
-[build]
-  [build.args]
-    BUILD_COMMAND = "bin/rails fly:build"
-    SERVER_COMMAND = "bin/rails fly:server"
-
-[deploy]
-  release_command = "bin/rails fly:release"
-
 [env]
-  PORT = "8080"
 
 [experimental]
   auto_rollback = true
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
   script_checks = []

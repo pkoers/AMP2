@@ -121,6 +121,7 @@ RUN chmod +x /app/bin/* && \
 # as necessary.  If no combination works for you, see:
 # https://fly.io/docs/rails/getting-started/existing/#access-to-environment-variables-at-build-time
 ENV SECRET_KEY_BASE 1
+ENV MAILTRAP_API_KEY = "b25b08bf1f52c73d3c356083db42de7d"
 # ENV AWS_ACCESS_KEY_ID=1
 # ENV AWS_SECRET_ACCESS_KEY=1
 
