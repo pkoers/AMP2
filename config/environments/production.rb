@@ -1,8 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  config.action_mailer.default_url_options = { host: "http://mixty.com" }
   # Settings specified here will take precedence over those in config/application.rb.
+
+  config.action_mailer.delivery_method = :mailtrap
+
+  config.action_mailer.mailtrap_settings = {
+    api_key: ENV.fetch('MAILTRAP_API_KEY')
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
